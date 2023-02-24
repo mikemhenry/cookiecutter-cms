@@ -85,3 +85,23 @@ default-tag = "1.0.0"
 
 [tool.versioningit.write]
 file = "{{cookiecutter.repo_name}}/_version.py"
+
+
+[tool.coverage.run]
+# .coveragerc to control coverage.py and pytest-cov
+omit = [
+    # Omit the tests
+    "*/tests/*",
+    # Omit generated versioneer
+    "{{cookiecutter.repo_name}}/_version.py"
+]
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = ['E203',]
+
+[tool.isort]
+profile = "black"
+
+[tool.black]
+line-length = 88

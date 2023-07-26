@@ -42,7 +42,7 @@ jobs:
           cache-env: true
           cache-downloads: true
           create-args: >-
-            python==${{ matrix.python-version }}
+            python=={{ '${{ matrix.python-version }}' }}
 
       - name: Install package
         run: |

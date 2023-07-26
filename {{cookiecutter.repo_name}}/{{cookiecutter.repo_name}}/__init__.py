@@ -1,7 +1,5 @@
 """{{cookiecutter.description}}"""
 
-# Add imports here
-from .{{cookiecutter.first_module_name}} import *
+from importlib.metadata import version
 
-
-from ._version import __version__
+__version__ = version("{{cookiecutter.repo_name}}")

@@ -38,7 +38,7 @@ def git_init_and_tag():
     Invoke the initial git and tag with 0.0.0 to make an initial version for
     Versioneer to ID if not already in a git repository.
     """
-    
+
     # Check if we are in a git repository
     directory_status = invoke_shell("git status", expected_error=True, print_output=False)
     # Create a repository and commit if not in one.
@@ -46,12 +46,12 @@ def git_init_and_tag():
         # Initialize git
         invoke_shell("git init --initial-branch=main")
 
-        # Add files created by cookiecutter 
+        # Add files created by cookiecutter
         invoke_shell("git add .")
         invoke_shell(
             "git commit -m \"Initial commit after CMS Cookiecutter creation, version {}\"".format(
                 '{{ cookiecutter._cms_cc_version }}'))
-        
+
         # Check for a tag
         version = invoke_shell("git tag", expected_error=True)
         # Tag if no tag exists
@@ -60,14 +60,6 @@ def git_init_and_tag():
     else:
         print("\ngit repository detected. "
               "CookieCutter files have been created in {{ cookiecutter.repo_name }} directory.")
-
-
-def remove_rtd():
-    include_rtd = '{{ cookiecutter.include_ReadTheDocs }}'
-    if include_rtd == "n":
-        rtd_env = os.path.join("docs", "requirements.yaml")
-        os.remove('readthedocs.yml')
-        os.remove(rtd_env)
 
 
 def random_file_cleanup_removal():
@@ -82,6 +74,5 @@ def random_file_cleanup_removal():
             pass
 
 
-remove_rtd()
 random_file_cleanup_removal()
 git_init_and_tag()

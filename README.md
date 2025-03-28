@@ -1,4 +1,4 @@
-# Cookiecutter for Computational Molecular Sciences (CMS) Python Packages
+# Cookiecutter for Computational Molecular Sciences (CMS) Python Packages (Mike's Version)
 [//]: # (Badges)
 [![GitHub Actions Build Status](https://github.com/MolSSI/cookiecutter-cms/workflows/Pseudo%20Validate%20GHA%20Output/badge.svg)](https://github.com/MolSSI/cookiecutter-cms/actions?query=workflow%3A%22Pseudo+Validate+GHA+Output%22)
 [![Documentation Status](https://readthedocs.org/projects/cookiecutter-cms/badge/?version=latest)](https://cookiecutter-cms.readthedocs.io/en/latest/?badge=latest)
@@ -36,7 +36,7 @@ With [`cookiecutter` installed](https://cookiecutter.readthedocs.io/en/latest/in
 execute the following command inside the folder you want to create the skeletal repository.
 
 ```bash
-cookiecutter gh:molssi/cookiecutter-cms
+cookiecutter gh:mikemhenry/cookiecutter-cms
 ```
 
 Which fetches this repository from github automatically and prompts the user for some simple information such as
